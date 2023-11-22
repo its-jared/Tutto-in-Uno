@@ -3,15 +3,13 @@ package app;
 import java.beans.PropertyVetoException;
 
 import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import javax.swing.JTextPane;
 
 import core.Main;
-import ui.Desktop;
 import util.Application;
-import javax.swing.border.BevelBorder;
-import javax.swing.JRadioButton;
-import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.Font;
 
 public class Console extends Application {
 
@@ -21,8 +19,6 @@ public class Console extends Application {
 		super.desktop = _desktop;
 		super.applicationName = "Console";
 		super.applicationVersion = Main.APPLICATION_VERSION;
-		
-		build();
 	}
 	
 	/**
@@ -46,7 +42,13 @@ public class Console extends Application {
 		
 		
 		super.desktop.add(internalFrame);
+		internalFrame.getContentPane().setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JTextPane txtpnThisIsSome = new JTextPane();
+		txtpnThisIsSome.setEditable(false);
+		txtpnThisIsSome.setText("sdgsgg");
+		txtpnThisIsSome.setFont(new Font("Monospaced", Font.PLAIN, 12));
+		internalFrame.getContentPane().add(txtpnThisIsSome);
 		super.applicationFrame.setVisible(true);
 	}
-
 }

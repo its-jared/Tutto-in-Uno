@@ -1,5 +1,16 @@
 package core;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import org.pushingpixels.radiance.theming.api.skin.NightShadeSkin;
+import org.pushingpixels.radiance.theming.api.skin.RadianceBusinessLookAndFeel;
+import org.pushingpixels.radiance.theming.api.skin.RadianceCremeCoffeeLookAndFeel;
+import org.pushingpixels.radiance.theming.api.skin.RadianceGraphiteAquaLookAndFeel;
+import org.pushingpixels.radiance.theming.api.skin.RadianceNebulaLookAndFeel;
+import org.pushingpixels.radiance.theming.api.skin.RadianceNightShadeLookAndFeel;
+
 import app.Console;
 import ui.Window;
 import util.Debug;
@@ -15,10 +26,18 @@ public class Main {
 		debug = new Debug();
 		debug.log(APPLICATION_NAME + " - " + APPLICATION_VERSION);
 		
-		window = new Window();
-		debug.log("Displaying window...");
 		
-		new Console(window.getDesktop().getDesktop());
+		SwingUtilities.invokeLater(() -> {
+	        try {
+	          UIManager.setLookAndFeel(new RadianceNightShadeLookAndFeel());
+	        } catch (Exception e) {
+	          debug.log("Unable to init look and feel!");
+	        }
+
+	        window = new Window();
+			debug.log("Displaying window...");
+	    });
+		
 	}
 
 }
