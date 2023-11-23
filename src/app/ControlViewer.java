@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -77,12 +78,13 @@ public class ControlViewer extends Application {
 		super.desktop = _desktop;
 		super.applicationName = "Control Viwer";
 		super.applicationVersion = 1.0f;
+		super.applicationIcon = new ImageIcon("icons/applications/file.png");
 	}
 	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	protected void build() {
+	public void build() {
 		Main.debug.log("Building " + super.applicationName + "...");
 		
 		JInternalFrame internalFrame = new JInternalFrame(super.applicationName);
@@ -96,6 +98,7 @@ public class ControlViewer extends Application {
 		internalFrame.setIconifiable(true);
 		internalFrame.setClosable(true);
 		internalFrame.setBounds(100, 100, 499, 1262);
+		internalFrame.setFrameIcon(applicationIcon);
 		super.applicationFrame = internalFrame;
 		
 		
