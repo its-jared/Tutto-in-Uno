@@ -7,11 +7,13 @@ import org.pushingpixels.radiance.theming.api.skin.RadianceNightShadeLookAndFeel
 
 import ui.Window;
 import util.Debug;
+import util.User;
 
 public class Main {
 
 	public static Debug debug;
 	public static Window window;
+	public static User currentUser;
 	public static final String APPLICATION_NAME = "Tutto in Uno";
 	public static final float APPLICATION_VERSION = 0.1f;
 	
@@ -19,6 +21,7 @@ public class Main {
 		debug = new Debug();
 		debug.log(APPLICATION_NAME + " - " + APPLICATION_VERSION);
 		
+		currentUser = new User("default");
 		
 		SwingUtilities.invokeLater(() -> {
 	        try {

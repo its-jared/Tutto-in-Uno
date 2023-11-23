@@ -1,0 +1,22 @@
+TODO BEFORE RELEASE: 
+
+== APPLICATIONS ==
+- Project File View (ONLY FILES INSIDE OF THE TUTTO IN UNO DIRECTORY), can open and close them too
+- Settings
+- Plain Text Editor
+- Camera
+- Photos
+
+== CORE ==
+- Extentions (Downloadable Apps)
+- Notifications
+- Account and Sign in.
+- Guest accounts.
+
+== APP BAR == 
+- Drawer (when too many apps are on the app bar)
+- Search (find apps, and settings)
+- Customizable
+
+== DESKTOP ==
+(DONE) - Wallpaper
